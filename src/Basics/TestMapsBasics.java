@@ -85,7 +85,7 @@ class TestMapsBasics implements BasicQuery{
 	@AfterClass
 	static void tearDownAfterClass() throws Exception {
 		System.out.println("Destroying Connection");
-		session.execute("DROP TABLE " + KEYSPACE_NAME+"."+ TABLE_NAME);
+		//session.execute("DROP TABLE " + KEYSPACE_NAME+"."+ TABLE_NAME);
 		CassandraConnection.DestroyMe();
 	}
 

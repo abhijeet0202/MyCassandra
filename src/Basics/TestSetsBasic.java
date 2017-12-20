@@ -141,5 +141,7 @@ class TestSetsBasic implements BasicQuery {
 		AssertJUnit.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME,id);
 	}
+	
+	
 
 }
