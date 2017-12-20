@@ -3,7 +3,7 @@
  */
 package Basics;
 
-import org.testng.AssertJUnit;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -47,7 +47,7 @@ class TestBasicList implements BasicQuery {
 				.append("(id, game, score)").append(" VALUES (").append("'123-abcd','quake',[12,14,17]").append(");");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, null);
 	}
 
@@ -61,7 +61,7 @@ class TestBasicList implements BasicQuery {
 				.append(" SET score= ").append("[3,8,1]").append(" WHERE id = ").append("'123-abcd'").append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, "'123-abcd'");
 	}
 
@@ -75,7 +75,7 @@ class TestBasicList implements BasicQuery {
 				.append(" SET score= score + ").append("[200,201,202]").append(" WHERE id = ").append("'123-abcd'").append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, "'123-abcd'");
 	}
 	
@@ -89,7 +89,7 @@ class TestBasicList implements BasicQuery {
 				.append(" SET score=  ").append("[100,101,102] + score").append(" WHERE id = ").append("'123-abcd'").append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, "'123-abcd'");
 	}
 	
@@ -103,7 +103,7 @@ class TestBasicList implements BasicQuery {
 				.append(" SET score[1]= 1000 ").append(" WHERE id = ").append("'123-abcd'").append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, "'123-abcd'");
 	}
 	
@@ -117,7 +117,7 @@ class TestBasicList implements BasicQuery {
 				.append(" WHERE id = ").append("'123-abcd'").append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, "'123-abcd'");
 	}
 	
@@ -131,7 +131,7 @@ class TestBasicList implements BasicQuery {
 				.append(" SET score= score - ").append("[100,201]").append(" WHERE id = ").append("'123-abcd'").append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, "'123-abcd'");
 	}
 

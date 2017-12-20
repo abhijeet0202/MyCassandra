@@ -1,6 +1,6 @@
 package Basics;
 
-import org.testng.AssertJUnit;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -102,7 +102,7 @@ class TestMapsBasics implements BasicQuery{
 				.append("(id, name, favs)").append(" VALUES (").append(query).append(");");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, null);
 	}
 
@@ -117,7 +117,7 @@ class TestMapsBasics implements BasicQuery{
 				.append(" SET favs= ").append(mapData).append(" WHERE id = ").append(id).append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, id);
 	}
 
@@ -130,7 +130,7 @@ class TestMapsBasics implements BasicQuery{
 				.append(" SET favs").append(mapData).append(" WHERE id = ").append(id).append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME,id);
 	}
 	
@@ -143,7 +143,7 @@ class TestMapsBasics implements BasicQuery{
 				.append(" SET favs = favs +").append(mapData).append(" WHERE id = ").append(id).append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, id);
 	}
 	
@@ -156,7 +156,7 @@ class TestMapsBasics implements BasicQuery{
 				.append(" WHERE id = ").append(id).append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, id);
 	}
 	
@@ -169,7 +169,7 @@ class TestMapsBasics implements BasicQuery{
 				.append(" SET favs = favs -").append(mapData).append(" WHERE id = ").append(id).append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, id);
 	}
 	
@@ -182,7 +182,7 @@ class TestMapsBasics implements BasicQuery{
 				.append(" SET favs").append(mapData).append(" WHERE id = ").append(id).append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME,id);
 	}
 

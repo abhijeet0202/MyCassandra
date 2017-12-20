@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Session;
 
 public class TestVoucherTable implements BasicQuery {

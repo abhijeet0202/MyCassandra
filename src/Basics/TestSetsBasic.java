@@ -3,7 +3,7 @@
  */
 package Basics;
 
-import org.testng.AssertJUnit;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -84,7 +84,7 @@ class TestSetsBasic implements BasicQuery {
 				.append("(id, name, favs)").append(" VALUES (").append(query).append(");");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, null);
 	}
 
@@ -99,7 +99,7 @@ class TestSetsBasic implements BasicQuery {
 				.append(" SET favs= ").append(setData).append(" WHERE id = ").append(id).append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME, id);
 	}
 	
@@ -112,7 +112,7 @@ class TestSetsBasic implements BasicQuery {
 				.append(" SET favs = favs +").append(setData).append(" WHERE id = ").append(id).append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME,id);
 	}
 	
@@ -125,7 +125,7 @@ class TestSetsBasic implements BasicQuery {
 				.append(" SET favs = favs -").append(setData).append(" WHERE id = ").append(id).append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME,id);
 	}
 	
@@ -138,7 +138,7 @@ class TestSetsBasic implements BasicQuery {
 				.append(" SET favs = favs +").append(setData).append(" WHERE id = ").append(id).append(";");
 
 		ResultSet result = myObject.executeQuery(session, sqlQuery.toString());
-		AssertJUnit.assertNotNull(result);
+		Assert.assertNotNull(result);
 		printStatement(session, KEYSPACE_NAME, TABLE_NAME,id);
 	}
 	
